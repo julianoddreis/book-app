@@ -1,8 +1,15 @@
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 const theme = {
-  spaces: [],
-  colors: {}
+  spaces: [2, 4, 8, 16, 32, 64, 128],
+  colors: {
+    primary: '#3F4043',
+    secondary: '#4ABDF1',
+    background: '#F2F2F2',
+    grey: '#54565A',
+    black: '#000',
+    white: '#fff'
+  }
 }
 
 const GlobalStyles = createGlobalStyle`
@@ -10,8 +17,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'SFProDisplay';
   }
 
   a {
