@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Row, { RowProps } from '@components/Row'
+import { Row, RowProps } from '@components'
 
 export interface ColumnProps extends RowProps {}
 

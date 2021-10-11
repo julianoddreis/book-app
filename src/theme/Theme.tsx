@@ -1,7 +1,7 @@
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 const theme = {
-  spaces: [2, 4, 8, 16, 32, 64, 128],
+  spaces: [],
   colors: {
     primary: '#3F4043',
     secondary: '#4ABDF1',
