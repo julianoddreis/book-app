@@ -204,3 +204,109 @@ export const mockedReadingBooks = [
     }
   }
 ]
+
+export const mockedReviews = [
+  {
+    kind: 'books#volume',
+    id: 'QlduAgAAQBAJ',
+    etag: 'k6gmEN78Rs4',
+    selfLink: 'https://www.googleapis.com/books/v1/volumes/QlduAgAAQBAJ',
+    volumeInfo: {
+      title: "Don't Make Me Think, Revisited",
+      subtitle: 'A Common Sense Approach to Web Usability',
+      authors: ['Steve Krug'],
+      publisher: 'New Riders',
+      publishedDate: '2013-12-23',
+      description:
+        'Since Don’t Make Me Think was first published in 2000, hundreds of thousands of Web designers and developers have relied on usability guru Steve Krug’s guide to help them understand the principles of intuitive navigation and information design. Witty, commonsensical, and eminently practical, it’s one of the best-loved and most recommended books on the subject. Now Steve returns with fresh perspective to reexamine the principles that made Don’t Make Me Think a classic–with updated examples and a new chapter on mobile usability. And it’s still short, profusely illustrated…and best of all–fun to read. If you’ve read it before, you’ll rediscover what made Don’t Make Me Think so essential to Web designers and developers around the world. If you’ve never read it, you’ll see why so many people have said it should be required reading for anyone working on Web sites. “After reading it over a couple of hours and putting its ideas to work for the past five years, I can say it has done more to improve my abilities as a Web designer than any other book.” –Jeffrey Zeldman, author of Designing with Web Standards',
+      industryIdentifiers: [
+        {
+          type: 'ISBN_13',
+          identifier: '9780133597264'
+        },
+        {
+          type: 'ISBN_10',
+          identifier: '0133597261'
+        }
+      ],
+      readingModes: {
+        text: true,
+        image: true
+      },
+      pageCount: 216,
+      printType: 'BOOK',
+      categories: ['Computers'],
+      averageRating: 4,
+      ratingsCount: 25,
+      maturityRating: 'NOT_MATURE',
+      allowAnonLogging: true,
+      contentVersion: '2.6.4.0.preview.3',
+      panelizationSummary: {
+        containsEpubBubbles: false,
+        containsImageBubbles: false
+      },
+      imageLinks: {
+        reviewThumbnail:
+          'https://i.ytimg.com/vi/vBzBgewl4ac/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAyGdNL8iF6tvHsYwb3QTjE5sPqRQ',
+        smallThumbnail:
+          'http://books.google.com/books/content?id=QlduAgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+        thumbnail:
+          'http://books.google.com/books/content?id=QlduAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api'
+      },
+      language: 'en',
+      previewLink:
+        'http://books.google.com.br/books?id=QlduAgAAQBAJ&printsec=frontcover&dq=dont+make+me+think&hl=&cd=1&source=gbs_api',
+      infoLink: 'https://play.google.com/store/books/details?id=QlduAgAAQBAJ&source=gbs_api',
+      canonicalVolumeLink: 'https://play.google.com/store/books/details?id=QlduAgAAQBAJ'
+    },
+    saleInfo: {
+      country: 'BR',
+      saleability: 'FOR_SALE',
+      isEbook: true,
+      listPrice: {
+        amount: 120.79,
+        currencyCode: 'BRL'
+      },
+      retailPrice: {
+        amount: 120.79,
+        currencyCode: 'BRL'
+      },
+      buyLink:
+        'https://play.google.com/store/books/details?id=QlduAgAAQBAJ&rdid=book-QlduAgAAQBAJ&rdot=1&source=gbs_api',
+      offers: [
+        {
+          finskyOfferType: 1,
+          listPrice: {
+            amountInMicros: 120790000,
+            currencyCode: 'BRL'
+          },
+          retailPrice: {
+            amountInMicros: 120790000,
+            currencyCode: 'BRL'
+          },
+          giftable: true
+        }
+      ]
+    },
+    accessInfo: {
+      country: 'BR',
+      viewability: 'PARTIAL',
+      embeddable: true,
+      publicDomain: false,
+      textToSpeechPermission: 'ALLOWED_FOR_ACCESSIBILITY',
+      epub: {
+        isAvailable: false
+      },
+      pdf: {
+        isAvailable: false
+      },
+      webReaderLink: 'http://play.google.com/books/reader?id=QlduAgAAQBAJ&hl=&printsec=frontcover&source=gbs_api',
+      accessViewStatus: 'SAMPLE',
+      quoteSharingAllowed: false
+    },
+    searchInfo: {
+      textSnippet:
+        'Since Don’t Make Me Think was first published in 2000, hundreds of thousands of Web designers and developers have relied on usability guru Steve Krug’s guide to help them understand the principles of intuitive navigation and information ...'
+    }
+  }
+]

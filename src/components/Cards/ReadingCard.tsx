@@ -3,18 +3,18 @@ import styled from 'styled-components'
 
 import { Row, RowProps, Column, Text, Icon } from '@components'
 
-interface BookCardProps extends RowProps {
+interface ReadingCardBooks extends RowProps {
   title: string
   authors: string[]
   image: string
 }
 
-const ReadingCard: React.FC<BookCardProps> = (props) => {
+const ReadingCard: React.FC<ReadingCardBooks> = (props) => {
   const { title, authors, image, ...rest } = props
 
   return (
     <CardContainer {...rest}>
-      <BookImage src={image} />
+      <BookImage src={image ?? '/images/book-placeholder.png'} />
       <InnerContent>
         <Column>
           <Text fontSize='20px' color='#2A2B26' mb={5}>

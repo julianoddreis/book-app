@@ -28,7 +28,7 @@ const BookCard: React.FC<BookCardProps> = (props) => {
           </Text>
         </Row>
       </Column>
-      <BookImage src={image} />
+      <BookImage src={image ?? '/images/book-placeholder.png'} />
 
       <Circle />
       <Rectangle />
