@@ -1,23 +1,51 @@
-import useSWR from 'swr'
+import { useQuery, useInfiniteQuery } from 'react-query'
 
 import { IBook } from '@@types/books'
+import { api } from '@providers/google-books'
+
+interface BooksResponse {
+  items: IBook[]
+}
 
 export const useBooks = () => {
-  const { data, error } = useSWR<{ items: IBook[] }>('/v1/volumes?q=NirEyal')
+  const { data, isLoading, error } = useQuery('books', (): Promise<BooksResponse> => api.get('/v1/volumes?q=NirEyal'))
 
   return {
-    books: data?.items,
-    isLoading: !error && !data,
-    error
+    error,
+    isLoading,
+    books: data?.items
   }
 }
 
 export const useBookById = (bookId: string) => {
-  const { data, error } = useSWR<IBook>(`/v1/volumes/${bookId}`)
+  const { data, isLoading, error } = useQuery(['books', bookId], (): Promise<IBook> => api.get(`/v1/volumes/${bookId}`))
 
   return {
-    book: data,
-    isLoading: !error && !data,
-    error
+    error,
+    isLoading,
+    book: data
+  }
+}
+
+export const useSearch = (query: string) => {
+  const { data, isLoading, isFetchingNextPage, error, fetchNextPage } = useInfiniteQuery(
+    ['search', query],
+    ({ pageParam = 0 }): Promise<BooksResponse> =>
+      api.get('/v1/volumes', { params: { q: query, startIndex: pageParam } }),
+    {
+      enabled: !!query
+    }
+  )
+
+  const books = data?.pages.flatMap(({ items }) => items ?? [])
+
+  const nextPage = () => fetchNextPage({ pageParam: books?.length })
+
+  return {
+    error,
+    isLoading,
+    books,
+    nextPage,
+    isFetchingNextPage
   }
 }

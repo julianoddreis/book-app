@@ -11,7 +11,7 @@ const Home: NextPage = () => {
 
   return (
     <Column bg='background' minHeight='100vh' p='40px 20px'>
-      <Input icon={<Icon name='search' />} placeholder='Search book' mb={40} />
+      <Input onFocus={() => router.push('/search')} placeholder='Search book' icon={<Icon name='search' />} mb={40} />
 
       <Slider title='Discover new book' cta={{ label: 'More' }} isLoading={isLoading} error={error}>
         {books?.map((book, index) => (

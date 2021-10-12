@@ -1,18 +1,21 @@
 import type { AppProps } from 'next/app'
-import { SWRConfig } from 'swr'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 import Theme from '@theme'
-import { api } from '@providers/google-books'
 
 import '../../public/fonts/fonts.css'
 
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { refetchOnWindowFocus: false } }
+})
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <SWRConfig value={{ fetcher: api }}>
+    <QueryClientProvider client={queryClient}>
       <Theme>
         <Component {...pageProps} />
       </Theme>
-    </SWRConfig>
+    </QueryClientProvider>
   )
 }
 export default MyApp
