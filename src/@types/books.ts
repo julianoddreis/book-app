@@ -1,5 +1,5 @@
 export interface IBook {
-  kind: 'books#volume'
+  kind: string
   id: string
   etag: string
   selfLink: string

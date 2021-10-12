@@ -20,7 +20,7 @@ const Search: NextPage = () => {
   const [paginationRef, shouldPaginate] = useInView({
     threshold: 0
   })
-  console.log(books)
+
   useEffect(() => {
     if (shouldPaginate && !isFetchingNextPage && books?.length) {
       nextPage()
