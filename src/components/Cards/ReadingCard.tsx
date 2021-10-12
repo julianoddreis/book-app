@@ -21,7 +21,7 @@ const ReadingCard: React.FC<ReadingCardBooks> = (props) => {
             {title}
           </Text>
           <Text fontSize='10px' color='#74776D' mb={10}>
-            {authors.join(', ')}
+            {authors?.join(', ')}
           </Text>
           <Row alignItems='center'>
             <Icon name='bookmark' />

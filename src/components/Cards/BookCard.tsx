@@ -19,7 +19,7 @@ const BookCard: React.FC<BookCardProps> = (props) => {
           {title}
         </Text>
         <Text fontSize='14px' color='#E7E7E1' mb={30}>
-          {authors.join(', ')}
+          {authors?.join(', ')}
         </Text>
         <Row alignItems='center'>
           <Icon name='statistics' />
