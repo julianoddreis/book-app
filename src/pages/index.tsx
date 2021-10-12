@@ -1,9 +1,12 @@
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 
 import { Column, Input, Icon, Slider, BookCard } from '@components'
 import { useBooks } from '@services/books'
 
 const Home: NextPage = () => {
+  const router = useRouter()
+
   const { books, isLoading, error } = useBooks()
 
   return (
@@ -19,6 +22,7 @@ const Home: NextPage = () => {
             title={book.volumeInfo.title}
             authors={book.volumeInfo.authors}
             image={book.volumeInfo.imageLinks?.thumbnail}
+            onClick={() => router.push(`/books/${book.id}`)}
           />
         ))}
       </Slider>

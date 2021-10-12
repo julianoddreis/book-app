@@ -6,13 +6,12 @@ export interface SvgProps {
 }
 
 interface IconProps extends SvgProps {
-  name: typeof iconNames[number]
+  name: 'search' | 'statistics' | 'arrow'
 }
-
-const iconNames = ['search', 'statistics']
 
 import Search from './SearchIcon'
 import Statistics from './StatisticsIcon'
+import Arrow from './ArrowIcon'
 
 const IconComponent = ({ name, ...props }: IconProps) => {
   const Icon = useMemo(() => {
@@ -22,6 +21,8 @@ const IconComponent = ({ name, ...props }: IconProps) => {
         return Search
       case 'statistics':
         return Statistics
+      case 'arrow':
+        return Arrow
     }
   }, [name])
 

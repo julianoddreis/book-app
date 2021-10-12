@@ -11,3 +11,13 @@ export const useBooks = () => {
     error
   }
 }
+
+export const useBookById = (bookId: string) => {
+  const { data, error } = useSWR<IBook>(`/v1/volumes/${bookId}`)
+
+  return {
+    book: data,
+    isLoading: !error && !data,
+    error
+  }
+}
