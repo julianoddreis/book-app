@@ -1,7 +1,7 @@
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 const theme = {
-  spaces: [],
+  space: [],
   colors: {
     primary: '#3F4043',
     secondary: '#4ABDF1',
@@ -13,20 +13,16 @@ const theme = {
 }
 
 const GlobalStyles = createGlobalStyle`
-  html,
-  body {
+  * {
     padding: 0;
     margin: 0;
     font-family: 'SFProDisplay';
+    box-sizing: border-box;
   }
 
   a {
     color: inherit;
     text-decoration: none;
-  }
-
-  * {
-    box-sizing: border-box;
   }
 `
 

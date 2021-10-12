@@ -9,9 +9,10 @@ interface IconProps extends SvgProps {
   name: typeof iconNames[number]
 }
 
-const iconNames = ['search']
+const iconNames = ['search', 'statistics']
 
 import Search from './SearchIcon'
+import Statistics from './StatisticsIcon'
 
 const IconComponent = ({ name, ...props }: IconProps) => {
   const Icon = useMemo(() => {
@@ -19,6 +20,8 @@ const IconComponent = ({ name, ...props }: IconProps) => {
       default:
       case 'search':
         return Search
+      case 'statistics':
+        return Statistics
     }
   }, [name])
 
