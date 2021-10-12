@@ -1,23 +1,16 @@
 import type { NextPage } from 'next'
 
-import { Row, Column, Input, Icon, Text, BookCard } from '@components'
+import { Column, Input, Icon, Slider, BookCard } from '@components'
 import { useBooks } from '@services/books'
-import styled from 'styled-components'
 
 const Home: NextPage = () => {
   const { books, isLoading, error } = useBooks()
 
   return (
-    <Column bg='background' minHeight='100vh'>
-      <Spacing>
-        <Input icon={<Icon name='search' />} placeholder='Search book' />
-        <Row justifyContent='space-between' mb='15px'>
-          <Text fontSize='18px'>Discover new book</Text>
-          <Text color='secondary'>More</Text>
-        </Row>
-      </Spacing>
+    <Column bg='background' minHeight='100vh' p='40px 20px'>
+      <Input icon={<Icon name='search' />} placeholder='Search book' mb={40} />
 
-      <Row maxWidth='100%' overflow='auto'>
+      <Slider title='Discover new book' cta={{ label: 'More' }} isLoading={isLoading} error={error}>
         {books?.map((book, index) => (
           <BookCard
             mr={10}
@@ -28,13 +21,9 @@ const Home: NextPage = () => {
             image={book.volumeInfo.imageLinks?.thumbnail}
           />
         ))}
-      </Row>
+      </Slider>
     </Column>
   )
 }
-
-const Spacing = styled.div`
-  padding: 40px 20px;
-`
 
 export default Home
