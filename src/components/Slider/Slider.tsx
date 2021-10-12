@@ -1,5 +1,6 @@
-import { Column, ColumnProps, Row, Text, Loader } from '@components'
 import styled from 'styled-components'
+
+import { Column, ColumnProps, Row, Text, Loader } from '@components'
 
 interface SliderProps extends ColumnProps {
   title: string
