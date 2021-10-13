@@ -10,7 +10,7 @@ interface InputProps
 }
 
 const Input: React.FC<InputProps> = (props) => {
-  const { icon, name, value, onChange, placeholder, autoFocus, ...rest } = props
+  const { icon, name, value, onChange, onFocus, placeholder, autoFocus, ...rest } = props
 
   return (
     <Container width='100%' {...rest}>
@@ -19,6 +19,7 @@ const Input: React.FC<InputProps> = (props) => {
         name={name}
         value={value}
         onChange={onChange}
+        onFocus={onFocus}
         placeholder={placeholder}
         pl={!!icon ? 40 : 16}
         autoFocus={autoFocus}

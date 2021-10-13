@@ -15,7 +15,9 @@ const Slider = (props: SliderProps) => {
   return (
     <Column {...rest}>
       <Row justifyContent='space-between' mb='15px' px='20px'>
-        <Text fontSize='18px'>{title}</Text>
+        <Text fontSize='18px' letterSpacing='0.5px'>
+          {title}
+        </Text>
         <Button color='secondary'>{actionLabel}</Button>
       </Row>
       <ItemsContainer maxWidth='100%' overflow='auto'>

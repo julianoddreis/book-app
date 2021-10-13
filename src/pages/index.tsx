@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
 
-import { Column, Input, Icon, Slider, BookCard, ReadingCard, ReviewCard } from '@components'
+import { Text, Column, Input, Icon, Slider, BookCard, ReadingCard, ReviewCard, NavigationTabs } from '@components'
 import { useBooks } from '@services/books'
 import { mockedReadingBooks, mockedReviews } from '@mocks/books'
 
@@ -11,9 +11,16 @@ const Home: NextPage = () => {
   const { books, isLoading, error } = useBooks()
 
   return (
-    <Column bg='background' minHeight='100vh' py='40px'>
+    <Column bg='background' minHeight='100vh' pt='40px' pb='80px'>
       <Column px='20px' mb={40}>
-        <Input onFocus={() => router.push('/search')} placeholder='Search book' icon={<Icon name='search' />} />
+        <Input onFocus={() => router.push('/search')} placeholder='Search book' icon={<Icon name='search' />} mb={30} />
+        <Text fontSize='24px' fontWeight={400}>
+          Hi,{' '}
+          <Text as='span' color='#FF6978' fontWeight={600} mr={10}>
+            Mehmed Al Faith
+          </Text>
+          <img src='/images/hand-greeting.png' style={{ width: 24 }} />
+        </Text>
       </Column>
       <Slider title='Discover new book' actionLabel='More' isLoading={isLoading} error={!!error} mb={50}>
         {books?.map((book, index) => (
@@ -54,6 +61,8 @@ const Home: NextPage = () => {
           />
         ))}
       </Slider>
+
+      <NavigationTabs currentPath='/home' />
     </Column>
   )
 }

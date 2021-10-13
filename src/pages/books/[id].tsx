@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
 
-import { Column, Icon, Loader, Text } from '@components'
+import { Column, Icon, Loader, Row, Text } from '@components'
 import { useBookById } from '@services/books'
 
 const BookPage: NextPage = () => {
@@ -11,7 +11,7 @@ const BookPage: NextPage = () => {
   const { book, isLoading, error } = useBookById(query.id as string)
 
   return (
-    <Column bg='white' minHeight='100vh'>
+    <Column bg='white' minHeight='100vh' pb='80px'>
       <Header>
         <button onClick={() => router.push('/')}>
           <Icon name='arrow' />
@@ -21,11 +21,15 @@ const BookPage: NextPage = () => {
             Ops! Algo de errado aconteceu. tente novamente mais tarde.
           </Text>
         )}
-        {!error && (isLoading ? <Loader mt={200} /> : <BookImage src={book?.volumeInfo.imageLinks.thumbnail} />)}
+        {!error &&
+          (isLoading ? (
+            <Loader mt={200} />
+          ) : (
+            <BookImage src={book?.volumeInfo.imageLinks.thumbnail ?? '/images/book-placeholder.png'} />
+          ))}
 
         <Decorations src='/images/book-page-decorations.png' />
       </Header>
-
       <Column px='20px' py='50px'>
         <Text fontSize={24} mb={5}>
           <b>{book?.volumeInfo.title}</b>: {book?.volumeInfo.subtitle}
@@ -35,6 +39,17 @@ const BookPage: NextPage = () => {
         </Text>
         <Text dangerouslySetInnerHTML={{ __html: book?.volumeInfo.description as string }} />
       </Column>
+
+      <BookTabs>
+        <Icon name='read' />
+        <Text>Read</Text>
+        <Divider />
+        <Icon name='listen' />
+        <Text>Listen</Text>
+        <Divider />
+        <Icon name='share' />
+        <Text>Share</Text>
+      </BookTabs>
     </Column>
   )
 }
@@ -71,6 +86,33 @@ const Decorations = styled.img`
   right: 0;
   max-height: 100%;
   z-index: 1;
+`
+
+const BookTabs = styled.div`
+  position: fixed;
+  bottom: 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  width: 335px;
+  left: calc(50% - 167px);
+  border-radius: 2px;
+  background: white;
+  box-shadow: 3px 3px 23px rgba(107, 103, 70, 0.125901);
+  ${Text} {
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+`
+
+const Divider = styled.div`
+  width: 1px;
+  height: 16px;
+  background: #979797;
+  opacity: 20%;
+  margin: 0 20px;
 `
 
 export default BookPage
