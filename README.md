@@ -1,6 +1,6 @@
 # Book app
 
-Project that search [google-books api](https://developers.google.com/books/docs/v1/using) and shows book details.
+Project that search books on [google-books api](https://developers.google.com/books/docs/v1/using) and shows its details.
 
 https://book-app-one.vercel.app/
 
