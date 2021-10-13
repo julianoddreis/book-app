@@ -25,7 +25,7 @@ const BookPage: NextPage = () => {
           (isLoading ? (
             <Loader mt={200} />
           ) : (
-            <BookImage src={book?.volumeInfo.imageLinks.thumbnail ?? '/images/book-placeholder.png'} />
+            <BookImage src={book?.volumeInfo.imageLinks?.thumbnail ?? '/images/book-placeholder.png'} />
           ))}
 
         <Decorations src='/images/book-page-decorations.png' />
@@ -78,6 +78,7 @@ const BookImage = styled.img`
   border: none;
   box-shadow: 0px 2px 4px 0px #e5e5e580;
   z-index: 2;
+  object-fit: cover;
 `
 
 const Decorations = styled.img`

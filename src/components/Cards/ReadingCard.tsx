@@ -70,6 +70,7 @@ const BookImage = styled.img`
   position: absolute;
   left: 20px;
   z-index: 2;
+  object-fit: cover;
 `
 
 const Circle = styled.div`

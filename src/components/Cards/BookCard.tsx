@@ -56,6 +56,7 @@ const CardContainer = styled(Row)`
 const BookImage = styled.img`
   width: 72px;
   height: 111px;
+  object-fit: cover;
 `
 
 const Circle = styled.div`

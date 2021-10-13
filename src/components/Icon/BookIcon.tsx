@@ -12,8 +12,8 @@ const BookIcon = ({ color }: SvgProps) => (
       strokeLinejoin='round'
     />
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M3.25 0H15.4V18H3.25C2.00736 18 1 16.9926 1 15.75V2.25C1 1.00736 2.00736 0 3.25 0Z'
       stroke={color}
       strokeWidth='2'
